@@ -1,13 +1,15 @@
+{% extends 'base.html' %} {% block body %}
 <html>
-    <head>
-
-    </head>
-    <body>
-        
-        <div>
-            <h1 align="center">Product List</h1>
-            <h2>{{product.name}}---{{product.total_price}}</h2>
-            <p>{%if product.description%} {{product.description}} {%else%} No description {%endif%}</p>
-        </div>
-    </body>
+  <head> </head>
+  <body>
+    <div>
+      <h1 align="center">Product List</h1>
+      <h2>{{product.name}}---{{product.total_price}}</h2>
+      <p>
+        {%if product.description%} {{product.description}} {%else%} No
+        description {%endif%}
+      </p>
+    </div>
+  </body>
 </html>
+{% endblock %}

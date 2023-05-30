@@ -1,15 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
 <!DOCTYPE html>
 <html>
 <head>
 </head>
 <body>
-    <h1 align="center">Product List</h1>
+    <h1 align="center">Products List</h1>
     {% for product in products %}
         <div>
-            <h2>{{ product.name }} -- {{ product.total_price}}</h2>
+            <h2> <a href="{%url 'product' product.id %}">{{ product.name }}</a> -- {{ product.total_price}}</h2>
             <p>{% if product.description %}{{ product.description }}{% else %}No description{% endif %}</p>
         </div>
         <hr>
     {% endfor %}
 </body>
 </html>
+{% endblock %}

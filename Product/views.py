@@ -21,3 +21,6 @@ def product(request,id):
     context={'product':product}
     return render (request,'product.html',context)
 
+def product_create(request):
+    return render(request,'product_create.html',{})
+
