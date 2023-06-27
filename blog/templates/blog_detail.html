@@ -1,0 +1,7 @@
+<h1>{{ blog.name }}</h1>
+<p>{{ blog.description }}</p>
+
+<form method="POST" action="{% url 'blog:like_blog' pk=blog.pk %}">
+    {% csrf_token %}
+    <button type="submit">{% if request.user in blog.likes.all %}Unlike{% else %}Like{% endif %}</button>
+</form>

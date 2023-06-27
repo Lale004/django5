@@ -11,7 +11,6 @@ def product_list(request):
     context = {'products': products}
     return render (request,'products.html',context)
 
-
 def product(request,id):
     product = Product.objects.get(id=id)
     if product.discount_price is not None:

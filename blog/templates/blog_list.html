@@ -1,0 +1,13 @@
+<h1>Blog List</h1>
+
+{% for blog in blogs %}
+    <div>
+        <h2><a href="{% url 'blog:blog_detail' pk=blog.pk %}">{{ blog.name }}</a></h2>
+        <p>{{ blog.description }}</p>
+        <form method="POST" action="{% url 'blog:like_blog' pk=blog.pk %}">
+            {% csrf_token %}
+            <button type="submit">{% if request.user in blog.likes.all %}DISlike{% else %}Like{% endif %}</button>
+        </form>
+    </div>
+
+{% endfor %}
